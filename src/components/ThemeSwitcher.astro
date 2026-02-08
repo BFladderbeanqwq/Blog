@@ -129,19 +129,12 @@
     }
     
     /* Default state: Assume Day/Light if no attribute matches */
-    .moon-icon {
-        opacity: 0;
-        transform: rotate(90deg) scale(0);
-    }
-    .sun-icon {
-        opacity: 1;
-        transform: rotate(0) scale(1);
-    }
-    
+    .moon-icon,
     :global(html[data-theme='modern']) .moon-icon {
         opacity: 0;
         transform: rotate(90deg) scale(0);
     }
+    .sun-icon,
     :global(html[data-theme='modern']) .sun-icon {
         opacity: 1;
         transform: rotate(0) scale(1);
