@@ -20,7 +20,11 @@ $v=<x,y,z>$
 
 给定$v_1=<x_1,y_1,z_1>$, $v_2=<x_2,y_2,z_2>$
 
-其点积$v_1\cdot v_2=x_1x_2+y_1y_2+z_1z_2=|v_1||v_2|cos\theta$
+其点积：
+
+$$
+v_1\cdot v_2=x_1x_2+y_1y_2+z_1z_2=|v_1||v_2|cos\theta
+$$
 
 若$v_1 \cdot v_2=0$, 则$v_1 \perp v_2$
 
@@ -32,13 +36,19 @@ $cos\theta=\frac{a\cdot b}{|a||b|}$
 
 给定$v_1=<x_1,y_1,z_1>$, $v_2=<x_2,y_2,z_2>$
 
-其叉积$v_1 \times v_2=\det \left | \begin{matrix}
+其叉积
+
+$$
+v_1 \times v_2=\det \left | \begin{matrix}
     i & j & k \\
     x_1 & y_1 & z_1 \\
     x_2 & y_2 & z_2 \\
-\end{matrix} \right |=(y_1z_2-y_2z_1)i-(x_1z_2-x_2z_1)j+(x_1y_2-x_2y_1)k$
+\end{matrix} \right |=(y_1z_2-y_2z_1)i-(x_1z_2-x_2z_1)j+(x_1y_2-x_2y_1)k
+$$
 
-$|v_1 \times v_2|=|v_1||v_2|sin\theta$
+$$
+|v_1 \times v_2|=|v_1||v_2|sin\theta
+$$
 
 方向用右手定则确定：$v_1$卷向$v_2$，拇指方向为叉积方向。
 
@@ -129,7 +139,9 @@ $z=\sqrt{x^2+y^2}$或$z^2=x^2+y^2$
 
 单位切向量：$\vec{T}(t) = \frac{\vec{r}'(t)}{|\vec{r}'(t)|}$ 。
 
-单位法向量：$\vec{N}(t) = \frac{\vec{T}'(t)}{|\vec{T}'(t)|}$ 。副法向量：$\vec{B}(t) = \vec{T}(t) \times \vec{N}(t)$。
+单位法向量：$\vec{N}(t) = \frac{\vec{T}'(t)}{|\vec{T}'(t)|}$ 。
+
+副法向量：$\vec{B}(t) = \vec{T}(t) \times \vec{N}(t)$。
 
 ## 多元函数基础
 
@@ -158,7 +170,13 @@ $z=\sqrt{x^2+y^2}$或$z^2=x^2+y^2$
 
 法则：对 $x$ 求偏导时，将 $y$ 当作常数；反之亦然。
 
-示例：$f(x, y) = x^3 + xy^3 - 2y^2$ $f_x = 3x^2 + y^3$ $f_y = 3xy^2 - 4y$
+示例：
+
+$f(x, y) = x^3 + xy^3 - 2y^2$
+
+$f_x = 3x^2 + y^3$
+
+$f_y = 3xy^2 - 4y$
 
 ### 切平面与线性近似切平面方程
 
@@ -198,7 +216,9 @@ Hessian 判别式 ($D$) ：$D = f_{xx}f_{yy} - (f_{xy})^2$
 
 核心思想：在极值点，两者的等高线相切，即梯度共线：
 
-$$\nabla f = \lambda \nabla g$$
+$$
+\nabla f = \lambda \nabla g
+$$
 
 ## 多元积分
 
@@ -235,7 +255,9 @@ $(\rho, \phi, \theta)$，其中 $\rho$ 为距离，$\phi$ 为天顶角 ($0 \le \
 
 用于坐标变换时的微元修正：$dx dy = |J| du dv$ 。
 
-$$J = \frac{\partial(x,y)}{\partial(u,v)} = \det \begin{vmatrix} x_u & x_v \\ y_u & y_v \end{vmatrix}$$
+$$
+J = \frac{\partial(x,y)}{\partial(u,v)} = \det \begin{vmatrix} x_u & x_v \\ y_u & y_v \end{vmatrix}
+$$
 
 ## 向量分析 (Vector Analysis)
 
@@ -255,7 +277,9 @@ $$J = \frac{\partial(x,y)}{\partial(u,v)} = \det \begin{vmatrix} x_u & x_v \\ y_
 
 将闭合曲线的线积分转化为区域内的二重积分 ：
 
-$$\oint_C P dx + Q dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA$$
+$$
+\oint_C P dx + Q dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA
+$$
 
 ### 旋度与散度
 
@@ -266,16 +290,22 @@ $$\oint_C P dx + Q dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\pa
 
 #### 通量公式
 
-$$\iint_S \vec{F} \cdot d\vec{S} = \iint_D \vec{F}(\vec{r}(x, y)) \cdot (\vec{r}_x \times \vec{r}_y) dA$$
+$$
+\iint_S \vec{F} \cdot d\vec{S} = \iint_D \vec{F}(\vec{r}(x, y)) \cdot (\vec{r}_x \times \vec{r}_y) dA
+$$
 
 #### 斯托克斯定理 (Stokes' Theorem)
 
 空间闭曲线积分与曲面旋度通量的转换。
 
-$$\oint_C \vec{F} \cdot d\vec{r} = \iint_S (\nabla \times \vec{F}) \cdot d\vec{S}$$
+$$
+\oint_C \vec{F} \cdot d\vec{r} = \iint_S (\nabla \times \vec{F}) \cdot d\vec{S}
+$$
 
 #### 高斯散度定理 (Divergence Theorem)
 
 封闭曲面通量与体积散度积分的转换 ：
 
-$$\iint_S \vec{F} \cdot d\vec{S} = \iiint_E (\nabla \cdot \vec{F}) dV$$
+$$
+\iint_S \vec{F} \cdot d\vec{S} = \iiint_E (\nabla \cdot \vec{F}) dV
+$$
