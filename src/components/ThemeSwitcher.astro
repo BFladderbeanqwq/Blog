@@ -128,11 +128,15 @@
         transition: transform 0.5s ease, opacity 0.5s ease;
     }
     
-    /* Logic handles icon visibility based on attribute selector if needed, 
-       or we can just swap simple opacity based on data-theme in global CSS 
-       but here simplest is usually referencing parent. 
-       Let's use global style awareness or just simple CSS here.
-    */
+    /* Default state: Assume Day/Light if no attribute matches */
+    .moon-icon {
+        opacity: 0;
+        transform: rotate(90deg) scale(0);
+    }
+    .sun-icon {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
     
     :global(html[data-theme='modern']) .moon-icon {
         opacity: 0;

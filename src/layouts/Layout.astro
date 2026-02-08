@@ -25,6 +25,7 @@ const { title = 'My Astro Blog', description = 'Welcome to my blog!' } = Astro.p
         
         <!-- Theme Initialization Script (Prevents FOUC) -->
         <script is:inline>
+            // Clean IIFE for initial load
             (function() {
                 const getTheme = () => {
                     const stored = localStorage.getItem('site-theme');
@@ -33,11 +34,19 @@ const { title = 'My Astro Blog', description = 'Welcome to my blog!' } = Astro.p
                 };
                 const theme = getTheme();
                 document.documentElement.setAttribute('data-theme', theme);
+                
+                // Ensure persistence during View Transitions
+                document.addEventListener('astro:after-swap', () => {
+                   document.documentElement.setAttribute('data-theme', getTheme());
+                });
             })();
         </script>
 
         <ClientRouter />
         
+        <!-- Katex CSS for LaTeX Math Support -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website" />
         <meta property="og:url" content={Astro.url} />
